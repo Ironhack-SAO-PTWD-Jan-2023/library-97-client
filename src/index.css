@@ -86,7 +86,9 @@ textarea {
 
 .EditUserPage form,
 .AddBook form,
-.AddUser form {
+.AddUser form,
+.SignupPage form,
+.LoginPage form {
   display: flex;
   flex-direction: column;
   align-items: center;
