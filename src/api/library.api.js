@@ -37,6 +37,24 @@ class LibApi {
     }
   }
 
+  getProfile = async () => {
+    try {
+      const { data } = await this.api.get('/user/profile');
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  updateAvatar = async (formData) => {
+    try {
+      const { data } = await this.api.put('/user/image', formData);
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   verify = async (token) => {
     const { data } = await this.api.get('/auth/verify', {
       headers: {
@@ -52,6 +70,7 @@ class LibApi {
       return data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 
@@ -61,6 +80,7 @@ class LibApi {
       return data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 
@@ -70,6 +90,7 @@ class LibApi {
       return data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 
@@ -79,6 +100,7 @@ class LibApi {
       return data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 
@@ -87,6 +109,7 @@ class LibApi {
       await this.api.delete(`/books/${bookId}`);
     } catch (error) {
       console.error(error);
+      throw error;
     }
   }
 }
