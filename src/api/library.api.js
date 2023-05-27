@@ -113,6 +113,6 @@ class LibApi {
     }
   }
 }
-
-const libApi = new LibApi(process.env.REACT_APP_API_URL);
+const backend_url = process.env.REACT_APP_API_URL || 'http://localhost:5000'
+const libApi = new LibApi(backend_url);
 export default libApi;
